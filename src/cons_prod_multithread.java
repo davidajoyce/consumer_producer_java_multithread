@@ -13,7 +13,18 @@ public class cons_prod_multithread
         {
 
 			public void run() {
-				// TODO Auto-generated method stub
+				 try
+	                {
+	                    ConsProd.produce();
+	                }
+	                // if a thread is interrupted before
+	                // or during a job
+	                catch(InterruptedException e)
+	                {
+	                	// prints the stack trace of the Exception
+	                	// to system err
+	                    e.printStackTrace();
+	                }
 				
 			}
           
@@ -24,7 +35,16 @@ public class cons_prod_multithread
         {
 
 			public void run() {
-				// TODO Auto-generated method stub
+				try
+                {
+                    ConsProd.consume();
+                }
+                // if a thread is interrupted before
+                //or during a job
+                catch(InterruptedException e)
+                {
+                    e.printStackTrace();
+                }
 				
 			}
            
